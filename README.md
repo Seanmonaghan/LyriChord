@@ -1,1 +1,3 @@
-# TestTeams
+# LyriChord
+
+The objective of this group project...
