@@ -1,3 +1,3 @@
-# TestTeams 
+# LyriChord
 
-Neels Test 
+The objective of this group project...
