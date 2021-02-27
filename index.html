@@ -7,30 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="ui icon input"><input type="text" placeholder="Search..." /><i aria-hidden="true"
-            class="search icon"></i></div>
-    <div>
-        <Header as='h2' attached='top'>
-            Attached Header
-        </Header>
-        <Segment attached>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.
-        </Segment>
+    <header>
+        <div class="ui huge header">Huge Header
+           
+        </div>
+    </header>
+    <div class="ui big icon input">
+        <input type="text" placeholder="Search big...">
+        <i class="search icon"></i>
     </div>
 
+    <section class="ui grid two column">
+        <div class="column" id="one" >
+            <div class= "ui segment">
+                <h2>Lyrics</h2>
+            </div>
+            <div class= "ui segment">
+
+            </div>
+        </div>
+        <div class="column" id="two">
+            <div class="ui segment">
+                <h2>Sheet music</h2>
+            </div>
+            <div class= "ui segment">
+                
+            </div>
+        </div>
+    </section>
+    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
 
 </body>
 
