@@ -20,7 +20,9 @@
         </div>
     </header>
     <div class="ui big icon input">
-        <input id="search-bar" type="text" placeholder="Song">
+
+        <input id="searchArtist" type="text" placeholder="Search big...">
+
         <i class="search icon"></i>
     </div>
    
@@ -34,32 +36,24 @@
       </button>
       
 
-      <!-- <div class="ui segment">
-        <div class="ui two column very relaxed grid">
-          <div class="column">
-            <h1>Lyrics</h1>
-            <p></p>
-            <p></p>
-            <p></p>
-          </div>
-          <div class="column">
-            <h1>Sheet Music</h1>
-            <p></p>
-            <p></p>
-            <p></p>
-          </div>
-        </div>
-        <div class="ui vertical divider">
-          
-        </div>
-      </div> -->
+
+    <div class="ui big icon input">
+        <input id="searchSong" type="text" placeholder="Search big...">
+        <i class="search icon"></i>
+    </div>
+
+    <button id = "searchButton" class="massive ui button">
+       Search
+      </button>
+
+
     <section class="ui grid two column">
         <div class="column" id="one" >
             <div class= "ui segment">
                 <h2>Lyrics</h2>
             </div>
-            <div class= "ui segment">
-
+            <div id = "lyricDiv" class= "ui segment">
+                
             </div>
         </div>
         <div class="column" id="two">
@@ -76,7 +70,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-
+    <script src="script.js"></script>
 
 </body>
 
