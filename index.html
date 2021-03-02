@@ -9,19 +9,50 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Scope+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <div class="ui huge header">Huge Header
+        <div class="ui huge header">Lyrichord
            
         </div>
     </header>
     <div class="ui big icon input">
-        <input type="text" placeholder="Search big...">
+        <input id="search-bar" type="text" placeholder="Song">
         <i class="search icon"></i>
     </div>
+   
+    <div class="ui big icon input">
+        <input id="search-bar" type="text" placeholder="Artist">
+        <i class="search icon"></i>
+    </div>
+    <br>
+    <button class="ui secondary button">
+        Display Lyrics
+      </button>
+      
 
+      <!-- <div class="ui segment">
+        <div class="ui two column very relaxed grid">
+          <div class="column">
+            <h1>Lyrics</h1>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
+          <div class="column">
+            <h1>Sheet Music</h1>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+        <div class="ui vertical divider">
+          
+        </div>
+      </div> -->
     <section class="ui grid two column">
         <div class="column" id="one" >
             <div class= "ui segment">
@@ -32,12 +63,13 @@
             </div>
         </div>
         <div class="column" id="two">
-            <div class="ui segment">
+            <button class="ui button">Display Chords</button>
+            <!-- <div class="ui segment">
                 <h2>Sheet music</h2>
             </div>
             <div class= "ui segment">
                 
-            </div>
+            </div> -->
         </div>
     </section>
     
