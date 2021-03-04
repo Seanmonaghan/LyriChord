@@ -6,3 +6,10 @@ section {
     font: 75%
 }
 
+#suggestions li {
+    display: block;
+    margin: 10px;
+    background-color: tan;
+    padding: 10px;
+    border-radius: 5px;
+}
