@@ -8,66 +8,78 @@
 
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Scope+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Scope+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <div class="ui huge header">Lyrichord
-           
-        </div>
+        <h1 class="ui huge inverted header">Lyrichord
+
+        </h1>
     </header>
-    <div class="ui big icon input">
-
-        <input id="searchArtist" type="text" placeholder="Search big...">
-
-        <i class="search icon"></i>
-    </div>
-   
-    <div class="ui big icon input">
-        <input id="search-bar" type="text" placeholder="Artist">
-        <i class="search icon"></i>
-    </div>
     <br>
-    <button class="ui secondary button">
-        Display Lyrics
-      </button>
-      
+    <main>
 
 
-    <div class="ui big icon input">
-        <input id="searchSong" type="text" placeholder="Search big...">
-        <i class="search icon"></i>
-    </div>
 
-    <button id = "searchButton" class="massive ui button">
-       Search
-      </button>
+        <div class="ui big icon input">
 
+            <input id="searchSong" type="text" placeholder="song">
 
-    <section class="ui grid two column">
-        <div class="column" id="one" >
-            <div class= "ui segment">
-                <h2>Lyrics</h2>
-            </div>
-            <div id = "lyricDiv" class= "ui segment">
-                
-            </div>
+            <i class="search icon"></i>
         </div>
-        <div class="column" id="two">
-            <button class="ui button">Display Chords</button>
-            <!-- <div class="ui segment">
-                <h2>Sheet music</h2>
-            </div>
-            <div class= "ui segment">
-                
-            </div> -->
+        <br>
+        <br>
+        <div class="ui big icon input">
+            <input id="searchArtist" type="text" placeholder="artist">
+            <i class="search icon"></i>
         </div>
-    </section>
-    
-    
+        <br>
+        <br>
+        <div> <button class="ui inverted gray button" id="searchButton">Search</button></div>
+        <br>
+        <br>
+
+
+
+
+
+
+
+        <section class="ui grid two column">
+            <div class="column" id="one">
+                <div class="ui inverted segment test">
+                    <h2>Lyrics</h2>
+                </div>
+                <div id="lyricDiv" class="ui inverted segment">
+
+                </div>
+            </div>
+            <div class="column" id="two">
+
+
+                <div class="ui inverted segment">
+
+                    <button class="ui inverted gray button">Sheet Music</button>
+
+                </div>
+
+                <div class="ui inverted segment test">
+
+                    <div id="suggestions">Suggestions</div>
+                </div>
+
+
+            </div>
+
+        </section>
+    </main>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="script.js"></script>

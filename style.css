@@ -1,9 +1,25 @@
+
+h1 {
+  
+    font-family: 'PT Serif', serif;
+}
+
 body{
     text-align: center;
-    font-family: 'Scope One', serif;
+    font-family: 'PT Serif', serif;
+    background-color: #003F5C;
 }
 
-section {
-    font: 75%
+
+.ui, .segment {
+    background-color:#94B5C0;
+    font-family: 'PT Serif', serif;
 }
 
+h2 {
+    font-family: 'PT Serif', serif;
+}
+
+button {
+    font-family: 'PT Serif', serif;
+}

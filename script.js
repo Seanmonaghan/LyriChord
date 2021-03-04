@@ -2,7 +2,8 @@ lyricDiv = $("#lyricDiv");
 searchButton = $("#searchButton");
 
 function getLyrics(artistName, title) {
-    var requestUrl = "https://api.lyrics.ovh/v1/" + artistName + "/" + title 
+    console.log("working");
+    var requestUrl = "https://api.lyrics.ovh/v1/" + artistName + "/" + title; 
 
     fetch(requestUrl)
         .then(function (response) {
