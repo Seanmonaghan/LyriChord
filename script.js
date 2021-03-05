@@ -1,6 +1,6 @@
 lyricDiv = $("#lyricDiv");
 searchButton = $("#searchButton");
-testButton = $("#testButton");
+chordsButton = $("#chordsButton");
 suggestions = $("#suggestions");
 
 
@@ -14,6 +14,7 @@ function getLyrics(artistName, title) {
         })
         .then(function (data) {
             lyricDiv.empty()
+            
             // console.log(data);
             fixLyrics = data.lyrics.replace('\n',' ')
             splitLyrics = fixLyrics.split('\n');
@@ -31,7 +32,7 @@ function getLyrics(artistName, title) {
 function getChords(artistName, songName) {
     var songsterrURL = "https://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + songName +"&a=" + artistName; 
 
-    testButton.click(function() {
+    chordsButton.click(function() {
         window.location= songsterrURL;
     });
 }
@@ -71,3 +72,11 @@ searchButton.click(function() {
     getChords(artistInputValue, songInputValue);
     createSuggestions(artistInputValue);
 });
+
+chordsButton.click(function() {
+    const artistName = searchArtist.value;
+    const songName = searchSong.value;
+    var chordURL = "https://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + songName +"&a=" + artistName; 
+
+    window.location = chordURL;
+})

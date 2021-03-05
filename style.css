@@ -1,5 +1,6 @@
 body{
     text-align: center;
+    background-color: #f8f8f8;
 }
 
 header .columns{
@@ -13,11 +14,13 @@ section {
 #suggestions li {
     display: block;
     margin: 10px;
-    background-color: tan;
+    background-color: hsl(171, 100%, 41%);
+    opacity: 85%;
     padding: 10px;
     border-radius: 5px;
 }
 
-#invisible {
-    color: white;
+input {
+    text-align: center;
+    color: hsl(171, 100%, 41%);
 }
