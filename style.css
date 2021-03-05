@@ -2,6 +2,10 @@ body{
     text-align: center;
 }
 
+header .columns{
+    margin-top: 20px;
+}
+
 section {
     font: 75%
 }
@@ -12,4 +16,8 @@ section {
     background-color: tan;
     padding: 10px;
     border-radius: 5px;
+}
+
+#invisible {
+    color: white;
 }
