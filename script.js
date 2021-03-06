@@ -31,7 +31,7 @@ function getLyrics(artistName, title) {
 
 
 function spotifyApi() {
-    var accessToken = 'BQBhWgzWakFOLJXKvzhRnve7l_FQmLI8NU9dSb6VQu97Y-DJhGIbpJSwmaUnBb5GsDAyrr4NJn1Qyf107H6lANMOcSh0vM3Pzf4eD_MdPZpSLHLbwliaNs788cc_2Hplw_X6n-11lTQyiLpQDyLjawh9YFbtyhZYdJQpn31VLbo';
+    var accessToken = 'BQC8VIyb4fT_sFVZmiGvjJDx-7qQfZfBPr7UytEpHUfamHwFeO67gu_VCYEuEnoV7MpjJC8GFbVVFtrCNkOC18Q3WTqPvBr1HCMXNYRSnGY014Jgu9v5X4I0U_eyWmFBgeI7PpmomNsDK79ZbTumnIUuqkbDfGn0EHkVbuTSlVU';
 
     // General Info
     // Client ID: a7a65bec8a33444b82e12002d1a69fc4
@@ -42,11 +42,12 @@ function spotifyApi() {
     // Base64 Encoded Client ID : Client Secret
     // YTdhNjViZWM4YTMzNDQ0YjgyZTEyMDAyZDFhNjlmYzQ6ZjA5YzFmOTJkNjUyNDI1MTliYTBiZjFhMDA2Mjg4M2E=
 
-    // OAuth Token cURL command: curl -H "Authorization: Basic YTdhNjViZWM4YTMzNDQ0YjgyZTEyMDAyZDFhNjlmYzQ6ZjA5YzFmOTJkNjUyNDI1MTliYTBiZjFhMDA2Mjg4M2E=" -d grant_type=authorization_code -d code=AQBgEM8cCNsex4fbgtf1KPbyxklxpmbM3MSAqtRnGpRrUsd4PNB9UewvGZaJJ3txltcEiwyfG9PIrqsQBTJLxKkAABXzlla5Vhx3z8j2NMmWWPKvPJSMeDXXUknHZjbOKJsUjAhjufQ-SQxNd4Z5YVrpHCyKD6UXT2RyuGoEaGGnk_lk4ciEO0CLqmzW_Bjhf084kFm6jZJPf_aDh2Zii-M -d redirect_uri=https%3A%2F%2Fseanmonaghan.github.io%2FLyriChord%2F https://accounts.spotify.com/api/token
+    // OAuth Token cURL command: curl -H "Authorization: Basic YTdhNjViZWM4YTMzNDQ0YjgyZTEyMDAyZDFhNjlmYzQ6ZjA5YzFmOTJkNjUyNDI1MTliYTBiZjFhMDA2Mjg4M2E=" -d grant_type=authorization_code -d code=AQDvRV59tlwI5SuSD5l7nsUQq8TGZtBG4Y82QEezPDyl-AqQASL-mdXoKWkuixf9SfBiY1RnxpHkIpiUF6by0h9i1LmNHZaKS1kBFrPH5rtRfrKhV1R25i16LUl04LWv_LxRQ-RhjAbL1s3EZfEEtSm9Ypw2qmnq4H52YWsagDrhDnCDqg-Pks-luQg_xz-gJLf7hs1SMwIzJcJlCR91TOo -d redirect_uri=https%3A%2F%2Fseanmonaghan.github.io%2FLyriChord%2F https://accounts.spotify.com/api/token
 
     // Use the access token to access the Spotify Web API
     $.ajax({
         url: 'https://api.spotify.com/v1/me',
+        method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + accessToken
         },
@@ -97,9 +98,9 @@ searchButton.click(function() {
     const artistInputValue = searchArtist.value;
     const songInputValue = searchSong.value;
     getLyrics(artistInputValue, songInputValue);
-    spotifyApi();
     getChords(artistInputValue, songInputValue);
     createSuggestions(artistInputValue);
+    spotifyApi();
 })
 
  
