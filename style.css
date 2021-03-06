@@ -1,8 +1,30 @@
 body{
     text-align: center;
+    background-color: #f8f8f8;
+}
+
+header .columns{
+    margin-top: 20px;
 }
 
 section {
     font: 75%
 }
 
+#suggestions li {
+    display: block;
+    margin: 10px;
+    background-color: hsl(171, 100%, 41%);
+    opacity: 85%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input {
+    text-align: center;
+    color: hsl(171, 100%, 41%);
+}
+
+li:hover {
+    cursor: pointer;
+}
