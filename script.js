@@ -31,7 +31,6 @@ function getLyrics(artistName, title) {
 
 
 function spotifyApi() {
-    var accessToken = 'BQC8VIyb4fT_sFVZmiGvjJDx-7qQfZfBPr7UytEpHUfamHwFeO67gu_VCYEuEnoV7MpjJC8GFbVVFtrCNkOC18Q3WTqPvBr1HCMXNYRSnGY014Jgu9v5X4I0U_eyWmFBgeI7PpmomNsDK79ZbTumnIUuqkbDfGn0EHkVbuTSlVU';
 
     // General Info
     // Client ID: a7a65bec8a33444b82e12002d1a69fc4
@@ -42,22 +41,9 @@ function spotifyApi() {
     // Base64 Encoded Client ID : Client Secret
     // YTdhNjViZWM4YTMzNDQ0YjgyZTEyMDAyZDFhNjlmYzQ6ZjA5YzFmOTJkNjUyNDI1MTliYTBiZjFhMDA2Mjg4M2E=
 
-    // OAuth Token cURL command: curl -H "Authorization: Basic YTdhNjViZWM4YTMzNDQ0YjgyZTEyMDAyZDFhNjlmYzQ6ZjA5YzFmOTJkNjUyNDI1MTliYTBiZjFhMDA2Mjg4M2E=" -d grant_type=authorization_code -d code=AQDvRV59tlwI5SuSD5l7nsUQq8TGZtBG4Y82QEezPDyl-AqQASL-mdXoKWkuixf9SfBiY1RnxpHkIpiUF6by0h9i1LmNHZaKS1kBFrPH5rtRfrKhV1R25i16LUl04LWv_LxRQ-RhjAbL1s3EZfEEtSm9Ypw2qmnq4H52YWsagDrhDnCDqg-Pks-luQg_xz-gJLf7hs1SMwIzJcJlCR91TOo -d redirect_uri=https%3A%2F%2Fseanmonaghan.github.io%2FLyriChord%2F https://accounts.spotify.com/api/token
+    // OAuth Token cURL command: curl -H "Authorization: Basic YTdhNjViZWM4YTMzNDQ0YjgyZTEyMDAyZDFhNjlmYzQ6ZjA5YzFmOTJkNjUyNDI1MTliYTBiZjFhMDA2Mjg4M2E=" -d grant_type=authorization_code -d code=AQD9UkWtUnSOZTDzTZa62JVeTXolMjfPjcCMhS0X8S_SiUEJaDr0Iul9wnfg3aHOWSmgq6tQUd-CQHEqx0_Ktx9vVypaSl0tlzDncVWgdkUj7ClzbdcnIESK6aOf5FZf2BE9cvsu0NPU1q3HrsSMfo-Rakp0SGwaN30woGJfMqFCN12VPsOJRkZFJb0PCrnL0Mf82w9qzf43EPMrqw1h174 -d redirect_uri=https%3A%2F%2Fseanmonaghan.github.io%2FLyriChord%2F https://accounts.spotify.com/api/token
 
     // Use the access token to access the Spotify Web API
-    $.ajax({
-        url: 'https://api.spotify.com/v1/me',
-        method: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + accessToken
-        },
-        success: function(response) {
-            return response.json()
-        }
-        .then, function(data) {
-            console.log(data);
-        }
-    });
 }
 
 function getChords(artistName, songName) {
@@ -100,7 +86,7 @@ searchButton.click(function() {
     getLyrics(artistInputValue, songInputValue);
     getChords(artistInputValue, songInputValue);
     createSuggestions(artistInputValue);
-    spotifyApi();
+    // spotifyApi();
 })
 
  
