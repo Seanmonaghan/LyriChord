@@ -1,7 +1,7 @@
-lyricDiv = $("#lyricDiv");
-searchButton = $("#searchButton");
-chordsButton = $("#chordsButton");
-suggestions = $("#suggestions");
+var lyricDiv = $("#lyricDiv");
+var searchButton = $("#searchButton");
+var chordsButton = $("#chordsButton");
+var suggestions = $("#suggestions");
 
 
 
@@ -33,19 +33,27 @@ function getSpotifySong(song) {
     var requestURL = "https://api.spotify.com/v1/search?q=" + song + "&type=track"
 
     fetch(requestURL, {
-        headers: {
-            Accept: "application/json",
-            Authorization: "Bearer BQB7fWmBS6VVoaR5On2QEdZiqnp-wIunELmXx6Q2wuz58PsBhURCJJhKu-36UAc8dbYXRCYxdkgjX7SOxgJE2EFnaWAPFbv6EEu5pA0PiuTyPD7tBmKUsIKraQMUHTgRylb-2CtgT3_cEIqGX0mzU1b8L589He3-iPPaohlCghg",
-            "Content-Type": "application/json"
-        }
-        
+            headers: {
+                Accept: "application/json",
+                Authorization: "Bearer BQC_wRfDZoI-S411BYB-bHWClKfHbXLyCKUxN_lSiZzpSXwZZvR8_bSbQfwf6GudKf3DbvaeD3ZP-g85Au8BoJQ3kNHhIL3g5wFS30tvu-G_X4p_lyetcCjWTLwR_8Sx1G6eTmxFzOJjL9RxR1KHhI6kLkpI5DazDYGxMbrzKsV42O_oJxfm7ChGXd8cmL82OvqY2N-7Ztju0XCKYZiCEeeZAC0cvBjH0-HHXM6ne3u918my8D9p_56GxYYc0Y-CRYIeBSFyDG5Y5YNIrHK-yErh",
+                "Content-Type": "application/json"
+            }
         })
         .then(function (response) {
             return response.json();
-    }).then(function (data) {
-        console.log(data);
-    })
-};
+        })
+        .then(function (data) {
+                console.log(data);
+                console.log(data.tracks.items[0].external_urls.spotify);
+                window.open(data.tracks.items[0].external_urls.spotify, "http://127.0.0.1:5500/index.html");
+        })  
+}
+
+$("#spotifyButton").on('click', function () {
+    console.log("Hello");
+    const songInputValue = searchSong.value;
+    getSpotifySong(songInputValue);
+})
 
 
 function getChords(artistName, songName) {
@@ -67,6 +75,9 @@ function createSuggestions(artistName) {
             suggestions.empty()
             // console.log(data);
             if (data.length > 5) {
+                var suggestionHeader = document.createElement("h2");
+                suggestionHeader.textContent = "Similar Chords"
+                $("#suggestionHeader").prepend(suggestionHeader);
                 for (i = 0; i < 10; i++) {
                     var listItem = document.createElement('li');
                     listItem.classList.add('listItem');
@@ -79,8 +90,8 @@ function createSuggestions(artistName) {
             $(".listItem").on("click", function (e) {
 
                 window.open(this.val, "http://127.0.0.1:5500/index.html");
-            });
-        });
+            })
+        })
 }
 
 searchButton.click(function () {
@@ -89,7 +100,6 @@ searchButton.click(function () {
     getLyrics(artistInputValue, songInputValue);
     getChords(artistInputValue, songInputValue);
     createSuggestions(artistInputValue);
-    getSpotifySong(songInputValue);
 })
 
 
