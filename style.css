@@ -3,18 +3,22 @@ body{
     background-color: #f8f8f8;
 }
 
-header .columns{
-    margin-top: 20px;
+.column {
+    display: initial;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-flow: row;
 }
 
 section {
-    font: 75%
+    font: 55%;
 }
 
 #suggestions li {
     display: block;
     margin: 10px;
     background-color: hsl(171, 100%, 41%);
+    color: black;
     opacity: 85%;
     padding: 10px;
     border-radius: 5px;
@@ -27,4 +31,14 @@ input {
 
 li:hover {
     cursor: pointer;
+}
+
+footer {
+    background-color: #f8f8f8;
+    font-size: 7px;
+    color: black;
+    font-weight: bold;
+    margin-top: auto;
+    padding-top: 100px;
+    padding-bottom: 50px;
 }
