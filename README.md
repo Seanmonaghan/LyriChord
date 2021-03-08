@@ -71,7 +71,7 @@ song and return the external URL for it.
 
 ```
 
-![Spotify API](assets/spotifyAPIFunction.PNG)
+![Spotify API](assets/spotifyAPIfunction.PNG)
 
 ```
 In addition to displaying the weather, searching for a city will also generate a list item that is
