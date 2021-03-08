@@ -3,6 +3,11 @@ var searchButton = $("#searchButton");
 var chordsButton = $("#chordsButton");
 var suggestions = $("#suggestions");
 
+// local Storage
+let savedArtist = localStorage.getItem("savedArtist");
+searchArtist.value = savedArtist;
+let savedSong = localStorage.getItem("savedSong");
+searchSong.value = savedSong;
 
 
 function getLyrics(artistName, title) {
@@ -31,7 +36,7 @@ function getSpotifySong(song) {
     fetch(requestURL, {
             headers: {
                 Accept: "application/json",
-                Authorization: "Bearer BQC_wRfDZoI-S411BYB-bHWClKfHbXLyCKUxN_lSiZzpSXwZZvR8_bSbQfwf6GudKf3DbvaeD3ZP-g85Au8BoJQ3kNHhIL3g5wFS30tvu-G_X4p_lyetcCjWTLwR_8Sx1G6eTmxFzOJjL9RxR1KHhI6kLkpI5DazDYGxMbrzKsV42O_oJxfm7ChGXd8cmL82OvqY2N-7Ztju0XCKYZiCEeeZAC0cvBjH0-HHXM6ne3u918my8D9p_56GxYYc0Y-CRYIeBSFyDG5Y5YNIrHK-yErh",
+                Authorization: "Bearer BQASO_PV0KKSw7e78tv_5WBUq7GuVW-JuwlU-3A4lpe1i7i0vtmkUutcPkT2aLm2dxUFy6wfNWnfaP_kHOTDPSVtF56tAnR0dMmBYJH_5E1BZxWXyxGbxxq9gRq2pb3QZSQGZFL3WbLBlri7o8vJRwNR3FFIz_Z1Xd2p339f75z2fA-lW5fHS4EAYOCwNKGHn7jvMelbA4apZcP8LVlR5JgLxCzVCXW6tqmnYKmaaHbFSXnelq-GN8ZrYP0j_wzDR2_cc9rWq9yLNxsYysnqGoc7",
                 "Content-Type": "application/json"
             }
         })
@@ -78,6 +83,9 @@ function createSuggestions(artistName) {
 searchButton.click(function () {
     const artistInputValue = searchArtist.value;
     const songInputValue = searchSong.value;
+    localStorage.setItem("savedArtist", searchArtist.value);
+    localStorage.setItem("savedSong", searchSong.value);
+    
     getLyrics(artistInputValue, songInputValue);
     createSuggestions(artistInputValue);
 })
