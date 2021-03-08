@@ -1,12 +1,12 @@
-lyricDiv = $("#lyricDiv");
-searchButton = $("#searchButton");
-chordsButton = $("#chordsButton");
-suggestions = $("#suggestions");
+var lyricDiv = $("#lyricDiv");
+var searchButton = $("#searchButton");
+var chordsButton = $("#chordsButton");
+var suggestions = $("#suggestions");
 
 
 
 function getLyrics(artistName, title) {
-    var requestUrl = "https://api.lyrics.ovh/v1/" + artistName + "/" + title; 
+    var requestUrl = "https://api.lyrics.ovh/v1/" + artistName + "/" + title;
 
     fetch(requestUrl)
         .then(function (response) {
@@ -14,85 +14,84 @@ function getLyrics(artistName, title) {
         })
         .then(function (data) {
             lyricDiv.empty()
-            
-            // console.log(data);
-            fixLyrics = data.lyrics.replace('\n',' ')
+            fixLyrics = data.lyrics.replace('\n', ' ')
             splitLyrics = fixLyrics.split('\n');
-            
-            
+
             for (i = 0; i < splitLyrics.length; i++) {
                 let songLine = document.createElement("p");
-                
                 songLine.textContent = splitLyrics[i];
                 lyricDiv.append(songLine);
-        }
+            }
         });
 };
 
+function getSpotifySong(song) {
+    var requestURL = "https://api.spotify.com/v1/search?q=" + song + "&type=track"
 
-function spotifyApi() {
-
-    // General Info
-    // Client ID: a7a65bec8a33444b82e12002d1a69fc4
-    // Client Secret: f09c1f92d65242519ba0bf1a0062883a
-    // Encoded Redirect URI: https%3A%2F%2Fseanmonaghan.github.io%2FLyriChord%2F
-    // Client ID : Client Secret 
-    // a7a65bec8a33444b82e12002d1a69fc4:f09c1f92d65242519ba0bf1a0062883a
-    // Base64 Encoded Client ID : Client Secret
-    // YTdhNjViZWM4YTMzNDQ0YjgyZTEyMDAyZDFhNjlmYzQ6ZjA5YzFmOTJkNjUyNDI1MTliYTBiZjFhMDA2Mjg4M2E=
-
-    // OAuth Token cURL command: curl -H "Authorization: Basic YTdhNjViZWM4YTMzNDQ0YjgyZTEyMDAyZDFhNjlmYzQ6ZjA5YzFmOTJkNjUyNDI1MTliYTBiZjFhMDA2Mjg4M2E=" -d grant_type=authorization_code -d code=AQD9UkWtUnSOZTDzTZa62JVeTXolMjfPjcCMhS0X8S_SiUEJaDr0Iul9wnfg3aHOWSmgq6tQUd-CQHEqx0_Ktx9vVypaSl0tlzDncVWgdkUj7ClzbdcnIESK6aOf5FZf2BE9cvsu0NPU1q3HrsSMfo-Rakp0SGwaN30woGJfMqFCN12VPsOJRkZFJb0PCrnL0Mf82w9qzf43EPMrqw1h174 -d redirect_uri=https%3A%2F%2Fseanmonaghan.github.io%2FLyriChord%2F https://accounts.spotify.com/api/token
-
-    // Use the access token to access the Spotify Web API
-}
-
-function getChords(artistName, songName) {
-    var songsterrURL = "https://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + songName +"&a=" + artistName; 
-
-    chordsButton.click(function() {
-        window.location= songsterrURL;
-    });
+    fetch(requestURL, {
+            headers: {
+                Accept: "application/json",
+                Authorization: "Bearer BQC_wRfDZoI-S411BYB-bHWClKfHbXLyCKUxN_lSiZzpSXwZZvR8_bSbQfwf6GudKf3DbvaeD3ZP-g85Au8BoJQ3kNHhIL3g5wFS30tvu-G_X4p_lyetcCjWTLwR_8Sx1G6eTmxFzOJjL9RxR1KHhI6kLkpI5DazDYGxMbrzKsV42O_oJxfm7ChGXd8cmL82OvqY2N-7Ztju0XCKYZiCEeeZAC0cvBjH0-HHXM6ne3u918my8D9p_56GxYYc0Y-CRYIeBSFyDG5Y5YNIrHK-yErh",
+                "Content-Type": "application/json"
+            }
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+                console.log(data);
+                console.log(data.tracks.items[0].external_urls.spotify);
+                window.open(data.tracks.items[0].external_urls.spotify, "http://127.0.0.1:5500/index.html");
+        })  
 }
 
 function createSuggestions(artistName) {
-    var testURL = "https://www.songsterr.com/a/ra/songs.json?pattern=" + artistName;
+    var songsterrURL = "https://www.songsterr.com/a/ra/songs.json?pattern=" + artistName;
 
-    fetch(testURL)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        suggestions.empty()
-        // console.log(data);
-        if (data.length > 5) {
-            for (i = 0; i < 10; i++) {
-                var listItem = document.createElement('li');
-                listItem.classList.add('listItem');
-                listItem.href = "http://www.songsterr.com/a/wa/song?id=" + data[i].id;
-                listItem.val = "http://www.songsterr.com/a/wa/song?id=" + data[i].id;
-                listItem.textContent = data[i].artist.name + "  -  " + data[i].title;
-                suggestions.append(listItem);
-            } 
-        } $(".listItem").on("click", function(e) {
-            
-            window.location = this.val;
-        });
-    });
+    fetch(songsterrURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            suggestions.empty()
+            // console.log(data);
+            if (data.length > 5) {
+                var suggestionHeader = document.createElement("h2");
+                suggestionHeader.textContent = "Similar Chords"
+                $("#suggestionHeader").prepend(suggestionHeader);
+                for (i = 0; i < 10; i++) {
+                    var listItem = document.createElement('li');
+                    listItem.classList.add('listItem');
+                    listItem.href = "http://www.songsterr.com/a/wa/song?id=" + data[i].id;
+                    listItem.val = "http://www.songsterr.com/a/wa/song?id=" + data[i].id;
+                    listItem.textContent = data[i].artist.name + "  -  " + data[i].title;
+                    suggestions.append(listItem);
+                }
+            }
+            $(".listItem").on("click", function (e) {
+
+                window.open(this.val, "http://127.0.0.1:5500/index.html");
+            })
+        })
 }
 
-searchButton.click(function() {
+searchButton.click(function () {
     const artistInputValue = searchArtist.value;
     const songInputValue = searchSong.value;
     getLyrics(artistInputValue, songInputValue);
-    getChords(artistInputValue, songInputValue);
     createSuggestions(artistInputValue);
-    // spotifyApi();
 })
 
- 
-chordsButton.click(function() {
+
+chordsButton.click(function () {
     const artistName = searchArtist.value;
     const songName = searchSong.value;
-    var chordURL = "https://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + songName +"&a=" + artistName; 
-    window.location = chordURL;
+    let chordURL = "https://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + songName + "&a=" + artistName;
+    window.open(chordURL, "http://127.0.0.1:5500/index.html");
+})
+
+$("#spotifyButton").on('click', function () {
+    console.log("Hello");
+    const songInputValue = searchSong.value;
+    getSpotifySong(songInputValue);
 })
