@@ -58,11 +58,11 @@ function createSuggestions(artistName) {
             return response.json();
         })
         .then(function (data) {
+            
             suggestions.empty()
             // console.log(data);
             if (data.length > 5) {
-                var suggestionHeader = document.createElement("h2");
-                suggestionHeader.textContent = "Similar Chords"
+                suggestionHeader.textContent = "Similar Chords";
                 $("#suggestionHeader").prepend(suggestionHeader);
                 for (i = 0; i < 10; i++) {
                     var listItem = document.createElement('li');
