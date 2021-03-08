@@ -1,6 +1,9 @@
 body{
     text-align: center;
     background-color: #f8f8f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .column {
@@ -40,5 +43,10 @@ footer {
     font-weight: bold;
     margin-top: auto;
     padding-top: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
+}
+
+button:hover {
+    transform: scale(1.010);
+    box-shadow: 0 0 25px -10px #090a0a;
 }
