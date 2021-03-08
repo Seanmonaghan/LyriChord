@@ -30,76 +30,23 @@ function getLyrics(artistName, title) {
 };
 
 function getSpotifySong(song) {
-    var requestURL = "https://api.spotify.com/v1/search?=" + song + "&type=track"
+    var requestURL = "https://api.spotify.com/v1/search?q=" + song + "&type=track"
 
-    $.ajax({
-        url: requestURL,
-        method: "GET",
-        dataType: "json",
+    fetch(requestURL, {
         headers: {
-            'Accept': "application/json",
-            'Content-Type': "application/json",
-            'Authorization': "Bearer BQDPkZpfw_ceXcM9DwFxYmJVuNfVoEeKO7YQv2_Ugfz_k6NlEaPhfEemBRW9g2GmASju4xdIwhg8HhQBFZGd_9rzUXEampk9xAlwn-y6QUclKQvx1QaIkQuihk2ha6kleyFjq85iHOTqKRJpz9spQvocs_lo1VeQZ_dwPuK2LU8"
-        },
-        success: function (response) {
-                return response.json()
-            }
-            .then,
-        function (data) {
-            console.log(data);
+            Accept: "application/json",
+            Authorization: "Bearer BQB7fWmBS6VVoaR5On2QEdZiqnp-wIunELmXx6Q2wuz58PsBhURCJJhKu-36UAc8dbYXRCYxdkgjX7SOxgJE2EFnaWAPFbv6EEu5pA0PiuTyPD7tBmKUsIKraQMUHTgRylb-2CtgT3_cEIqGX0mzU1b8L589He3-iPPaohlCghg",
+            "Content-Type": "application/json"
         }
-    });
+        
+        })
+        .then(function (response) {
+            return response.json();
+    }).then(function (data) {
+        console.log(data);
+    })
 };
 
-
-    // fetch(requestURL, {
-
-    //     '-H' : {
-    //         'Accept': "application/json",
-    //         'Content-Type': "application/json",
-    //         'Authorization': "Bearer BQDPkZpfw_ceXcM9DwFxYmJVuNfVoEeKO7YQv2_Ugfz_k6NlEaPhfEemBRW9g2GmASju4xdIwhg8HhQBFZGd_9rzUXEampk9xAlwn-y6QUclKQvx1QaIkQuihk2ha6kleyFjq85iHOTqKRJpz9spQvocs_lo1VeQZ_dwPuK2LU8"
-    //     }
-
-    // })
-    // .then(function(data) {
-    //     console.log(data)
-    // })
-
-
-
-// function spotifyApi() {
-
-//     window.onSpotifyWebPlaybackSDKReady = () => {
-//         const token = 'a7a65bec8a33444b82e12002d1a69fc4';
-//         const player = new Spotify.Player({
-//           name: 'Web Playback SDK Quick Start Player',
-//           getOAuthToken: cb => { cb(token); }
-//         });
-
-//         // Error handling
-//         player.addListener('initialization_error', ({ message }) => { console.error(message); });
-//         player.addListener('authentication_error', ({ message }) => { console.error(message); });
-//         player.addListener('account_error', ({ message }) => { console.error(message); });
-//         player.addListener('playback_error', ({ message }) => { console.error(message); });
-
-//         // Playback status updates
-//         player.addListener('player_state_changed', state => { console.log(state); });
-
-//         // Ready
-//         player.addListener('ready', ({ device_id }) => {
-//           console.log('Ready with Device ID', device_id);
-//         });
-
-//         // Not Ready
-//         player.addListener('not_ready', ({ device_id }) => {
-//           console.log('Device ID has gone offline', device_id);
-//         });
-
-//         // Connect to the player!
-//         player.connect();
-//       };
-
-// }
 
 function getChords(artistName, songName) {
     var songsterrURL = "https://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + songName + "&a=" + artistName;
@@ -149,6 +96,6 @@ searchButton.click(function () {
 chordsButton.click(function () {
     const artistName = searchArtist.value;
     const songName = searchSong.value;
-    var chordURL = "https://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + songName + "&a=" + artistName;
+    let chordURL = "https://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + songName + "&a=" + artistName;
     window.open(chordURL, "http://127.0.0.1:5500/index.html");
 })
