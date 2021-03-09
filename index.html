@@ -4,83 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Scope+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="#">
+    <title>LyriChord</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <header>
-        <h1 class="ui huge inverted header">Lyrichord
-
-        </h1>
+<body class="content container is-fluid">
+    <header class="columns content is-large">
+        <h1 class="is-offset-one-quarter column is-half mt-5">Lyri<span class = "has-text-primary">Chord</span></h1>
     </header>
-    <br>
-    <main>
 
+    <div class="container columns">
 
+    </div>
+    <div class="column">
 
-        <div class="ui big icon input">
-
-            <input id="searchSong" type="text" placeholder="song">
-
-            <i class="search icon"></i>
+        <div class="is-offset-one-quarter column column-gap is-half">
+            <h3>Artist Name</h3>
+            <input class="input is-medium is-rounded" id="searchArtist" type="text" placeholder="Artist">
         </div>
-        <br>
-        <br>
-        <div class="ui big icon input">
-            <input id="searchArtist" type="text" placeholder="artist">
-            <i class="search icon"></i>
+
+    </div>
+
+    <div class="column">
+
+        <div class="is-offset-one-quarter column column-gap is-half">
+            <h3>Song Name</h3>
+            <input id="searchSong" class="input is-medium is-rounded" type="text" placeholder="Song">
         </div>
-        <br>
-        <br>
-        <div> <button class="ui inverted gray button" id="searchButton">Search</button></div>
-        <br>
-        <br>
+
+    </div>
+
+    </div>
+
+    <section class="columns is-justify-content-space-evenly mt-3">
+        <button id="searchButton" class="p-2 column is-one-third button is-dark is-rounded">
+            <h4 class= "has-text-white">Get Lyrics</h4>
+        </button>
 
 
+        <button id="chordsButton" class="p-2 column is-one-third button is-primary is-rounded">
+            <h4>Get Chords</h4>
+        </button>
 
+    </section>
 
-
-
-
-        <section class="ui grid two column">
-            <div class="column" id="one">
-                <div class="ui inverted segment test">
-                    <h2>Lyrics</h2>
-                </div>
-                <div id="lyricDiv" class="ui inverted segment">
-
-                </div>
+</section>
+    <section class="columns mt-5">
+        <div class="column" id="one">
+            <div class="ui segment">
+                <h2 id="lyricHeader" class="">Lyrics</h2>
             </div>
-            <div class="column" id="two">
-
-
-                <div class="ui inverted segment">
-
-                    <button class="ui inverted gray button">Sheet Music</button>
-
-                </div>
-
-                <div class="ui inverted segment test">
-
-                    <div id="suggestions">Suggestions</div>
-                </div>
-
+            <div id="lyricDiv">
 
             </div>
+        </div>
+        <div class="column" id="two">
+            <div class="ui segment">
+                <h2>Suggested Song Chords</h2>
+            </div>
+            <div class="ui segment">
+                <div id="suggestions" class="ui list">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Script Tags -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
-        </section>
-    </main>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="script.js"></script>
 

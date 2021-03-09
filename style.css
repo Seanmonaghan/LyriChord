@@ -6,20 +6,35 @@ h1 {
 
 body{
     text-align: center;
-    font-family: 'PT Serif', serif;
-    background-color: #003F5C;
+
+    background-color: #f8f8f8;
 }
 
-
-.ui, .segment {
-    background-color:#94B5C0;
-    font-family: 'PT Serif', serif;
+header .columns{
+    margin-top: 20px;
+>>>>>>> main
 }
 
 h2 {
     font-family: 'PT Serif', serif;
 }
 
-button {
-    font-family: 'PT Serif', serif;
+
+#suggestions li {
+    display: block;
+    margin: 10px;
+    background-color: hsl(171, 100%, 41%);
+    opacity: 85%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input {
+    text-align: center;
+    color: hsl(171, 100%, 41%);
+}
+
+li:hover {
+    cursor: pointer;
+>>>>>>> main
 }
