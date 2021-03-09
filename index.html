@@ -12,67 +12,60 @@
 </head>
 
 <body class="content container is-fluid">
+    <!-- Header Section -->
     <div class="container-fluid">
         <header>
             <br>
-            <img src="assets/lcscriptgradient.png" style="max-width: 300px;">
+            <img src="assets/lcscriptgradient.png" style="max-width: 225px;">
         </header>
-    
-        <div class="container columns">
 
-            
-        </div>
-        <div class="column">
+        <!-- Search Bars -->
 
-    
+        <!-- Artist Search Bar -->
+        <section>
             <div class="is-offset-one-quarter column column-gap is-half-mobile">
                 <h4>Artist Name</h4>
                 <input class="input is-medium is-rounded" id="searchArtist" type="text" placeholder="Artist">
             </div>
-    
-        </div>
-    
-        <div class="column">
-    
-            <div class="is-offset-one-quarter column column-gap is-half-mobile">
-                <br>
-                <h4>Song Name</h4>
-                <input id="searchSong" class="input is-medium is-rounded" type="text" placeholder="Song">
-                <br>
-            </div>
-    
-        </div>
 
-        <section>
-            <button id = "spotifyButton" class = "is-success is-rounded button">Listen on Spotify</button>
+        <!-- Song Search Bar -->
+            <div class="column">
+                <div class="is-offset-one-quarter column column-gap is-half-mobile">
+                    <br>
+                    <h4>Song Name</h4>
+                    <input id="searchSong" class="input is-medium is-rounded" type="text" placeholder="Song">
+                    <br>
+                </div>
+            </div>
         </section>
-    
+
+        <!-- Spotify Button -->
+        <button id="spotifyButton" class="is-success is-rounded button">Listen on Spotify</button>
+
+        <!-- Search Buttons -->
         <section class="columns is-justify-content-space-evenly mt-3">
+            <!-- Get Lyrics Button -->
             <button id="searchButton" class="p-2 column is-one-third button is-dark is-rounded">
-                <h4 class= "has-text-white">Get Lyrics</h4>
+                <h4 class="has-text-white">Get Lyrics</h4>
             </button>
-    
-    
+
+            <!-- Get Chords Button -->
             <button id="chordsButton" class="p-2 column is-one-third button is-primary is-rounded">
                 <h4>Get Chords</h4>
             </button>
-    
         </section>
-    
-    </section>
-        <div class="row">
-            <section class="columns mt-6">
-                <div class="column" id="one">
-                    <div id="lyricDiv">
-                    </div>
-                </div>
-                <div class="column">
-                    <h2 id="suggestionHeader"></h2>
-                        <div id="suggestions" class="ui list">
-                        </div>
-                </div>
-            </section>
-        </div>
+
+        <section class="columns mt-6">
+            <!-- Div where Lyrics will appear -->
+            <div class="column">
+                <div id="lyricDiv"></div>
+            </div>
+            <!-- Div where Suggested Song List Items will be generated -->
+            <div class="column">
+                <h2 id="suggestionHeader"></h2>
+                <div id="suggestions" class="list"></div>
+            </div>
+        </section>
     </div>
     <!-- Script Tags -->
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"

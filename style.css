@@ -1,27 +1,25 @@
+/* Primary Tags */
 body{
     text-align: center;
     background-color: #f8f8f8;
-}
-
-.column {
-    display: initial;
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    flex-flow: row;
 }
 
-section {
-    font: 55%;
+button:hover {
+    transform: scale(1.010);
+    box-shadow: 0 0 25px -10px #090a0a;
 }
 
-#suggestions li {
-    display: block;
-    margin: 10px;
-    background-color: hsl(171, 100%, 41%);
+footer {
+    background-color: #f8f8f8;
+    font-size: 7px;
     color: black;
-    opacity: 85%;
-    padding: 10px;
-    border-radius: 5px;
+    font-weight: bold;
+    margin-top: auto;
+    padding-top: 100px;
+    padding-bottom: 25px;
 }
 
 input {
@@ -33,12 +31,28 @@ li:hover {
     cursor: pointer;
 }
 
-footer {
-    background-color: #f8f8f8;
-    font-size: 7px;
-    color: black;
-    font-weight: bold;
-    margin-top: auto;
-    padding-top: 100px;
-    padding-bottom: 50px;
+section {
+    font: 55%;
 }
+
+/* ID Styling */
+
+#suggestions li {
+    display: block;
+    margin: 10px;
+    background-color: hsl(171, 100%, 41%);
+    color: black;
+    opacity: 85%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Class Styling */
+
+.column {
+    display: initial;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-flow: row;
+}
+
