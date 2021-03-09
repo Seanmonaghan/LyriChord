@@ -46,7 +46,36 @@ footer {
     padding-bottom: 25px;
 }
 
+h4 {
+    font-family: 'Rock Salt';
+}
+
+::placeholder {
+    font-family: 'Rock Salt';
+}
+
 button:hover {
     transform: scale(1.010);
     box-shadow: 0 0 25px -10px #090a0a;
+}
+
+.input {
+    font-family: 'Rock Salt';
+}
+
+footer {
+    font-family: 'Rock Salt';
+}
+
+#lyricDiv {
+    font-family: 'Rock Salt';
+}
+
+#suggestions {
+    font-family: 'Rock Salt';
+}
+
+#suggestionHeader {
+    font-family: 'Rock Salt';
+    font-size: 12px;
 }
