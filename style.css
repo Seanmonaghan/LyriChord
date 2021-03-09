@@ -1,3 +1,4 @@
+/* Primary Tags */
 body{
     text-align: center;
     background-color: #f8f8f8;
@@ -6,37 +7,13 @@ body{
     flex-direction: column;
 }
 
-.column {
-    display: initial;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-flow: row;
-}
-
-section {
-    font: 55%;
-}
-
-#suggestions li {
-    display: block;
-    margin: 10px;
-    background-color: hsl(171, 100%, 41%);
-    color: black;
-    opacity: 85%;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-input {
-    text-align: center;
-    color: hsl(171, 100%, 41%);
-}
-
-li:hover {
-    cursor: pointer;
+button:hover {
+    transform: scale(1.010);
+    box-shadow: 0 0 25px -10px #090a0a;
 }
 
 footer {
+    font-family: 'Rock Salt';
     background-color: #f8f8f8;
     font-size: 7px;
     color: black;
@@ -50,25 +27,29 @@ h4 {
     font-family: 'Rock Salt';
 }
 
-::placeholder {
-    font-family: 'Rock Salt';
+input {
+    text-align: center;
+    color: hsl(171, 100%, 41%);
 }
 
-button:hover {
-    transform: scale(1.010);
-    box-shadow: 0 0 25px -10px #090a0a;
+li:hover {
+    cursor: pointer;
 }
 
-.input {
-    font-family: 'Rock Salt';
+section {
+    font: 55%;
 }
 
-footer {
-    font-family: 'Rock Salt';
-}
+/* ID Styling */
 
-#lyricDiv {
-    font-family: 'Rock Salt';
+#suggestions li {
+    display: block;
+    margin: 10px;
+    background-color: hsl(171, 100%, 41%);
+    color: black;
+    opacity: 85%;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #suggestions {
@@ -78,4 +59,25 @@ footer {
 #suggestionHeader {
     font-family: 'Rock Salt';
     font-size: 12px;
+}
+
+#lyricDiv {
+    font-family: 'Rock Salt';
+}
+
+/* Class Styling */
+
+.column {
+    display: initial;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-flow: row;
+}
+
+.input {
+    font-family: 'Rock Salt';
+}
+
+::placeholder {
+    font-family: 'Rock Salt';
 }
