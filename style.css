@@ -1,3 +1,4 @@
+/* Primary Tags */
 body{
     text-align: center;
     background-color: #f8f8f8;
@@ -6,34 +7,9 @@ body{
     flex-direction: column;
 }
 
-.column {
-    display: initial;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-flow: row;
-}
-
-section {
-    font: 55%;
-}
-
-#suggestions li {
-    display: block;
-    margin: 10px;
-    background-color: hsl(171, 100%, 41%);
-    color: black;
-    opacity: 85%;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-input {
-    text-align: center;
-    color: hsl(171, 100%, 41%);
-}
-
-li:hover {
-    cursor: pointer;
+button:hover {
+    transform: scale(1.010);
+    box-shadow: 0 0 25px -10px #090a0a;
 }
 
 footer {
@@ -46,7 +22,37 @@ footer {
     padding-bottom: 25px;
 }
 
-button:hover {
-    transform: scale(1.010);
-    box-shadow: 0 0 25px -10px #090a0a;
+input {
+    text-align: center;
+    color: hsl(171, 100%, 41%);
 }
+
+li:hover {
+    cursor: pointer;
+}
+
+section {
+    font: 55%;
+}
+
+/* ID Styling */
+
+#suggestions li {
+    display: block;
+    margin: 10px;
+    background-color: hsl(171, 100%, 41%);
+    color: black;
+    opacity: 85%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Class Styling */
+
+.column {
+    display: initial;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-flow: row;
+}
+
