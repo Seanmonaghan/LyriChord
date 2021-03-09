@@ -13,6 +13,7 @@ button:hover {
 }
 
 footer {
+    font-family: 'Rock Salt';
     background-color: #f8f8f8;
     font-size: 7px;
     color: black;
@@ -20,6 +21,10 @@ footer {
     margin-top: auto;
     padding-top: 100px;
     padding-bottom: 25px;
+}
+
+h4 {
+    font-family: 'Rock Salt';
 }
 
 input {
@@ -47,6 +52,19 @@ section {
     border-radius: 5px;
 }
 
+#suggestions {
+    font-family: 'Rock Salt';
+}
+
+#suggestionHeader {
+    font-family: 'Rock Salt';
+    font-size: 12px;
+}
+
+#lyricDiv {
+    font-family: 'Rock Salt';
+}
+
 /* Class Styling */
 
 .column {
@@ -56,3 +74,10 @@ section {
     flex-flow: row;
 }
 
+.input {
+    font-family: 'Rock Salt';
+}
+
+::placeholder {
+    font-family: 'Rock Salt';
+}
