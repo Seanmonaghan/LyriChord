@@ -31,7 +31,7 @@ function getSpotifySong(song) {
     fetch(requestURL, {
             headers: {
                 Accept: "application/json",
-                Authorization: "Bearer BQASO_PV0KKSw7e78tv_5WBUq7GuVW-JuwlU-3A4lpe1i7i0vtmkUutcPkT2aLm2dxUFy6wfNWnfaP_kHOTDPSVtF56tAnR0dMmBYJH_5E1BZxWXyxGbxxq9gRq2pb3QZSQGZFL3WbLBlri7o8vJRwNR3FFIz_Z1Xd2p339f75z2fA-lW5fHS4EAYOCwNKGHn7jvMelbA4apZcP8LVlR5JgLxCzVCXW6tqmnYKmaaHbFSXnelq-GN8ZrYP0j_wzDR2_cc9rWq9yLNxsYysnqGoc7",
+                Authorization: "Bearer BQALy4BxmPtW5tsJzb-E0AoA3LdUraANqZiK0ck3X2gxi9_vNUoQr9e2fym_yvYTja6n1yNN6GYfYM93SrwFDSYytTXOi2jhgv7ihiaXoA1AO9s3MkuG2UOPpddErTHoC-d-VOjNs_2QdBKLj8bWhISFdNQbHdRn-W4kN7AzQNGIPzT3XlYUxBc_2xY8ehRHyTpcFonsgHx6iwzSIz-UhXgH6W-ypT1R_j19Nqwqy7z_Qie9TJbKwSOFy2xEKXOmEWje1BaJ0htCOw_OmZAqEotd",
                 "Content-Type": "application/json"
             }
         })
