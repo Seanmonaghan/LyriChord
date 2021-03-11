@@ -19,7 +19,7 @@ so they can learn them both similtaniously and conveniently.
 
 ## Site Overview
 
-![Overall Image](assets/overall.png)
+![Overall Image](assets/overall.PNG)
 
 ```
 Upon rendering the page, the user is provided with two clearly labeled search bars 
