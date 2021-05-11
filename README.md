@@ -1,5 +1,22 @@
 # LyriChord
 
+[Description](#description) 
+
+[Ideal User](#ideal-user)
+
+[Installation Instructions](#installation-instructions) 
+
+[Site Overview](#site-overview) 
+  
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+[Contribution Guidelines](#contribution-guidelines) 
+
+[Tests](#tests) 
+ 
+[Questions](#questions)
+
+
 https://seanmonaghan.github.io/LyriChord/
 
 ## Description
@@ -10,18 +27,18 @@ This app utilizes the API of Lyrics.ovh, Songsterr and Spotify to create a centr
 
 ## Ideal User
 
-```
 This application is aimed at a user who is looking to 
 access both the lyrics and chords of different songs
 so they can learn them both similtaniously and conveniently.
- 
-```
+
+## Installation Instructions
+
+No need to install this application! If you want to clone or fork it to your local device feel free, otherwise it is available via github pages and can be found at the following link: https://seanmonaghan.github.io/LyriChord/
 
 ## Site Overview
 
 ![Overall Image](assets/overall.PNG)
 
-```
 Upon rendering the page, the user is provided with two clearly labeled search bars 
 where they can indicate the Artist name and Song Name they are looking for.  Most 
 functionality of this app requires both inputs to be entered, however the app will
@@ -32,10 +49,6 @@ The styling of the app was done with Bulma and includes a simple color scheme th
 pleasant to view and not distracting from the functionality of the application.  We have
 also developed a logo and favicon to further style the website.
 
-```
-
-```
-
 The first function of this app is to generate the lyrics of a song that they are interested
 in.  This is executed when the user clicks the "get lyrics" button, where the app will query
 Lyrics.ovh for the lyrics.  The function then breaks down the lyrics from their string format
@@ -44,12 +57,11 @@ and displays them for the user in a readable format.
 This button also generates a list of suggested songs that the user might also be interested in
 so that they can look up the lyrics for them, or click on them and get the chords for the song.
 
-```
+
 
 ![Lyric Function](assets/lyricFunction.PNG)
 
 
-```
 The secondary function of this app is to allow the user to quickly get the chords for the song.  
 When they click on the "Get Chords" button, they will have a new tab opened that contains the 
 Chords for the song on the Songsterr website.  
@@ -58,26 +70,42 @@ The user can also access the chords for any of the suggested songs just by click
 for when they are generated they are given a value based on a unique ID that songsterr has and
 upon being clicked they will similarly open a new tab with the chords in them.  
 
-```
+
 
 ![createSuggestion Function code snippet](assets/createSuggestionsFunction.PNG)
 
-```
+
 
 Finally, we have implimented the Spotify API to allow the user to go directly to the song they
 are searching for on Spotify.  This is done when the click on the button "listen on spotify", where
 the song search is passed into the function and an API call is made to spotify to search for that
 song and return the external URL for it.
 
-```
+
 
 ![Spotify API](assets/spotifyAPIfunction.PNG)
 
-```
+
 In addition to displaying the weather, searching for a city will also generate a list item that is
 displayed below the search bar.  These list items are saved into local storage so they will persist and 
 be regenerated when the user returns to the site using the load function.  These list items will also execute the getWeather function
 upon being clicked to bring up the weather information for that city.
 
-```
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+This application uses the MIT license
+
+## Contribution Guidelines
+
+If you would like to contribute to this project feel free to send requests.  I only wish that you be respectful to other contributes and to the code itself and maintain good clean coding practices. 
+
+### Questions
+
+If you have any questions about the application, be sure to contact me at my [e-mail](mailto:smonagha@conncoll.edu).
+
+Alternatively you can find me and my other works at my [Github account](https://github.com/seanmonaghan).
+
+
 
